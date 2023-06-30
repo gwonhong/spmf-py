@@ -45,8 +45,6 @@ class Spmf:
         self.output_file_path_ = output_filename
         self.print_to_stdout_ = print_to_stdout
         self.arguments_ = [str(a) for a in arguments]
-        self.patterns_ = []
-        self.df_ = None
         self.memory_ = memory
 
     def handle_input(self, input_type, input_filename, input_direct):
@@ -139,6 +137,4 @@ class Spmf:
                 if _line[-1].startswith("#SUP: "):
                     support = int(_line[-1][6:])
                 patterns.append((support, _line[:-1]))
-
-        self.patterns_ = patterns
         return patterns
