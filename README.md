@@ -5,7 +5,6 @@ Python Wrapper for SPMF 🐍 🎁
 The [SPMF](http://www.philippe-fournier-viger.com/spmf) [[1](https://github.com/LoLei/spmf-py#bibliography)] data mining Java library usable in Python.  
 
 Essentially, this module calls the Java command line tool of SPMF, passes the user arguments to it, and parses the output.  
-In addition, transformation of the data to Pandas DataFrame and CSV is possible.
 
 In theory, all algorithms featured in SPMF are callable. Nothing is hardcoded, the desired algorithm and its parameters need to be perused in the [SPMF documentation](http://www.philippe-fournier-viger.com/spmf/index.php?link=documentation.php).
 
@@ -17,38 +16,41 @@ Example:
 ```python
 from spmf import Spmf
 
-spmf = Spmf("PrefixSpan", input_filename="contextPrefixSpan.txt",
-            output_filename="output.txt", arguments=[0.7, 5])
+spmf = Spmf("PrefixSpan", input_type="file", \
+            input_filename="contextPrefixSpan.txt", \
+            arguments=[0.7, 5])
 spmf.run()
-print(spmf.to_pandas_dataframe(pickle=True))
-spmf.to_csv("output.csv")
+result = spmf.parse_output()
+print(len(result))
 ```
 
 Output:
 ```
+>.../spmf/spmf.jar
 =============  PREFIXSPAN 0.99-2016 - STATISTICS =============
- Total time ~ 2 ms
+ Total time ~ 8 ms
  Frequent sequences count : 14
- Max memory (mb) : 6.487663269042969
+ Max memory (mb) : 10.241966247558594
  minsup = 3 sequences.
  Pattern count : 14
 ===================================================
 
-      pattern sup
-0         [1]   4
-1      [1, 2]   4
-2      [1, 3]   4
-3   [1, 3, 2]   3
-4   [1, 3, 3]   3
-5         [2]   4
-6      [2, 3]   3
-7         [3]   4
-8      [3, 2]   3
-9      [3, 3]   3
-10        [4]   3
-11     [4, 3]   3
-12        [5]   3
-13        [6]   3
+
+14
+(4, ['1'])
+(4, ['1', '2'])
+(4, ['1', '3'])
+(3, ['1', '3', '2'])
+(3, ['1', '3', '3'])
+(4, ['2'])
+(3, ['2', '3'])
+(4, ['3'])
+(3, ['3', '2'])
+(3, ['3', '3'])
+(3, ['4'])
+(3, ['4', '3'])
+(3, ['5'])
+(3, ['6'])
 ```
 
 The usage is similar to the one described in the SPMF [documentation](http://www.philippe-fournier-viger.com/spmf/index.php?link=documentation.php).  

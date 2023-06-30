@@ -23,7 +23,7 @@ class Spmf:
         input_type="",  # file, normal_str, text_str, normal_list, text_list
         input_filename="",
         output_filename="spmf-output.txt",
-        print_to_stdout=False,
+        print_to_stdout=True,
         arguments=[],
         spmf_bin_location_dir=".",
         memory=0,
