@@ -136,5 +136,5 @@ class Spmf:
                 _line = line.split(" -1 ")
                 if _line[-1].startswith("#SUP: "):
                     support = int(_line[-1][6:])
-                patterns.append((support, _line[:-1]))
+                patterns.append((support, tuple(_line[:-1])))
         return patterns
