@@ -2,7 +2,7 @@
 Python Wrapper for SPMF 🐍 🎁
 
 ## Information
-The [SPMF](http://www.philippe-fournier-viger.com/spmf) [[1](https://github.com/LoLei/spmf-py#bibliography)] data mining Java library usable in Python.  
+The [SPMF](http://www.philippe-fournier-viger.com/spmf) [[1](https://github.com/gwonhong/spmf-py#bibliography)] data mining Java library usable in Python.  
 
 Essentially, this module calls the Java command line tool of SPMF, passes the user arguments to it, and parses the output.  
 
@@ -54,18 +54,18 @@ Output:
 ```
 
 The usage is similar to the one described in the SPMF [documentation](http://www.philippe-fournier-viger.com/spmf/index.php?link=documentation.php).  
-For all Python parameters, see the [Spmf class](https://github.com/LoLei/spmf-py/blob/master/spmf/__init__.py).  
+For all Python parameters, see the [Spmf class](https://github.com/gwonhong/spmf-py/blob/master/spmf/__init__.py).  
 
 ### SPMF Arguments
 The `arguments` parameter are the arguments that are passed to SPMF and depend on the chosen algorithm. SPMF handles optional parameters as an ordered list. As there are no named parameters for the algorithms, if e.g. only the first and the last parameter of an algorithm are to be used, the ones in between must be filled with `""` blank strings.  
-For advanced usage examples, see [`examples`](https://github.com/LoLei/spmf-py/tree/master/examples).
+For advanced usage examples, see [`examples`](https://github.com/gwonhong/spmf-py/tree/master/examples).
 
 ### SPMF Executable
 Download it from the [SPMF Website](http://www.philippe-fournier-viger.com/spmf/index.php?link=download.php).  
 It is assumed that the SPMF binary `spmf.jar` is located in the same directory as `spmf-py`. If it is not, either symlink it, or use the `spmf_bin_location_dir` parameter.
 
 ### Input Formats
-Either use an input file as specified by SPMF, or use one of the in-line formats as seen in [`examples`](https://github.com/LoLei/spmf-py/tree/master/examples).
+Either use an input file as specified by SPMF, or use one of the in-line formats as seen in [`examples`](https://github.com/gwonhong/spmf-py/tree/master/examples).
 
 ### Memory
 The maxmimum memory can be increased in the constructor via `Spmf(memory=n)`,
