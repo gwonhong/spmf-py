@@ -9,7 +9,10 @@ Essentially, this module calls the Java command line tool of SPMF, passes the us
 In theory, all algorithms featured in SPMF are callable. Nothing is hardcoded, the desired algorithm and its parameters need to be perused in the [SPMF documentation](http://www.philippe-fournier-viger.com/spmf/index.php?link=documentation.php).
 
 ## Installation
-[`pip install spmf`](https://pypi.org/project/spmf/)
+~~[`pip install spmf`](https://pypi.org/project/spmf/)~~
+Since this is the fork version of python spmf package, you should 
+1. clone this repo
+2. pip install path/to/cloned
 
 ## Usage
 Example:  
