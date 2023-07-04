@@ -15,6 +15,7 @@ import os
 import subprocess
 import tempfile
 
+
 class Spmf:
     def __init__(
         self,
